@@ -1,0 +1,22 @@
+Overall summary by type:
+  % time  type
+  100.00  Unaccounted for/rounding error
+
+Overall summary by design:
+  % time  design
+  100.00  Unaccounted for/rounding error
+
+Overall summary by module:
+  % time  module
+  100.00  Unaccounted for/rounding error
+
+Verilog code profile:
+   These are split into three categories:
+      C++:     Time in non-Verilated C++ code
+      Prof:    Time in profile overhead
+      VBlock:  Time attributable to a block in a Verilog file and line
+      VCommon: Time in a Verilated module, due to all parts of the design
+      VLib:    Time in Verilated common libraries, called by the Verilated code
+
+  %   cumulative   self              
+ time   seconds   seconds      calls   design  type      filename and line number

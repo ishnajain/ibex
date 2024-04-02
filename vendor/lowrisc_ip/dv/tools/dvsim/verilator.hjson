@@ -133,9 +133,9 @@
     {
       name: verilator_profile
       is_sim_mode: 1
-      // build_opts: ["--prof-cfuncs",
-      //              "--prof-threads",
-      //             ]
+      build_opts: ["--prof-cfuncs",
+                   "--prof-threads",
+                   ]
     }
     {
       name: verilator_loopdetect
