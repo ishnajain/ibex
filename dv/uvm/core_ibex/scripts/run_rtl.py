@@ -53,7 +53,7 @@ def _main() -> int:
         sim_opts += sim_opts_raw.replace('\n', '')
 
     trr.rtl_log         = trr.dir_test / 'rtl_sim.log'
-    trr.rtl_trace       = trr.dir_test / 'trace_core_00000000.log'
+    trr.rtl_trace       = trr.dir_test / 'trace_core.log'
     trr.iss_cosim_trace = trr.dir_test / f'{md.iss}_cosim_trace_core_00000000.log'
     subst_vars_dict = {
         'cwd': md.ibex_root,

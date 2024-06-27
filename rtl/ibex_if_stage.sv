@@ -135,6 +135,7 @@ module ibex_if_stage import ibex_pkg::*; #(
 
   logic              fetch_valid_raw;
   logic              fetch_valid;
+
   logic              fetch_ready;
   logic       [31:0] fetch_rdata;
   logic       [31:0] fetch_addr;
@@ -249,7 +250,7 @@ module ibex_if_stage import ibex_pkg::*; #(
 
   // There are two possible "branch please" signals that are computed in the IF stage: branch_req
   // and nt_branch_mispredict_i. These should be mutually exclusive (see the NoMispredBranch
-  // assertion), so we can just OR the signals together.
+  // assertion), so we can just OR the signals together.cosf
   assign prefetch_branch = branch_req | nt_branch_mispredict_i;
   assign prefetch_addr   = branch_req ? {fetch_addr_n[31:1], 1'b0} : nt_branch_addr_i;
 
@@ -719,7 +720,7 @@ module ibex_if_stage import ibex_pkg::*; #(
      * - predicted_branch_i: When set with a branch (branch_i) indicates the branch is a predicted
      *   one, it should be ignored when a branch_i isn't set.
      * - branch_mispredict_i: Indicates the previously predicted branch was mis-predicted and
-     *   execution should resume with the not-taken side of the branch (i.e. continue with the PC
+     *   execution should resume with the n ot-taken side of the branch (i.e. continue with the PC
      *   that followed the predicted branch). This must be raised before the instruction that is
      *   made available following a predicted branch is accepted (Following a cycle with branch_i
      *   & predicted_branch_i, branch_mispredict_i can only be asserted before or on the same cycle

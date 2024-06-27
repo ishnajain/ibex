@@ -752,7 +752,10 @@ module ibex_tracer (
       int fh = file_handle;
 
       if (fh == 32'h0) begin
-        string file_name_base = "trace_core";
+        string file_directory = "../../../../../media/ishna/Windows-SSD/FYP_windows/"; 
+        string file_name_base = {file_directory, "tracecore"};
+
+       // string file_name_base = "trace_core";
         void'($value$plusargs("ibex_tracer_file_base=%s", file_name_base));
         $sformat(file_name, "%s_%h.log", file_name_base, hart_id_i);
 

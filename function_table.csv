@@ -1,0 +1,27 @@
+Function Name,Start Address,Return Addresses
+_vectors_start      ,100000    ,
+putchar             ,100084    ,10008e
+puts                ,100090    ,10009c
+puthex              ,1000a4    ,1000c0
+sim_halt            ,1000c8    ,1000d0
+pcount_reset        ,1000d2    ,1001ca
+get_mepc            ,1001cc    ,1001d0
+get_mcause          ,1001d2    ,1001d6
+get_mtval           ,1001d8    ,1001dc
+simple_exc_handler  ,1001de    ,
+timer_disable       ,100234    ,10023c
+timer_read          ,10023e    ,10024c
+timecmp_update      ,10024e    ,10025a
+timer_enable        ,10025c    ,1002a8
+get_elapsed_time    ,1002aa    ,1002b6
+simple_timer_handler,1002b8    ,10033a
+factorial           ,10033e    ,10034c
+sum                 ,10035a    ,10035c
+default_exc_handler ,10035e    ,
+timer_handler       ,100362    ,
+reset_handler       ,100366    ,
+_start              ,1003ae    ,
+zero_loop           ,1003c2    ,
+main_entry          ,1003cc    ,
+sleep_loop          ,1003e0    ,
+main                ,1003e6    ,1003f8

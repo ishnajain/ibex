@@ -8,7 +8,7 @@
  */
 module ibex_alu #(
   parameter ibex_pkg::rv32b_e RV32B = ibex_pkg::RV32BNone
-) (
+) (rtl/
   input  ibex_pkg::alu_op_e operator_i,
   input  logic [31:0]       operand_a_i,
   input  logic [31:0]       operand_b_i,
@@ -26,7 +26,7 @@ module ibex_alu #(
 
   output logic [31:0]       adder_result_o,
   output logic [33:0]       adder_result_ext_o,
-
+rtl/
   output logic [31:0]       result_o,
   output logic              comparison_result_o,
   output logic              is_equal_result_o
@@ -54,7 +54,7 @@ module ibex_alu #(
 
   always_comb begin
     adder_op_a_shift1 = 1'b0;
-    adder_op_a_shift2 = 1'b0;
+    adder_op_a_shift2 = 1'b0;rtl/
     adder_op_a_shift3 = 1'b0;
     adder_op_b_negate = 1'b0;
     unique case (operator_i)
@@ -79,7 +79,7 @@ module ibex_alu #(
       default:;
     endcase
   end
-
+rtl/
   // prepare operand a
   always_comb begin
     unique case (1'b1)
@@ -99,7 +99,7 @@ module ibex_alu #(
       adder_op_b_negate: adder_in_b = operand_b_neg;
       default:           adder_in_b = {operand_b_i, 1'b0};
     endcase
-  end
+  endrtl/
 
   // actual adder
   assign adder_result_ext_o = $unsigned(adder_in_a) + $unsigned(adder_in_b);

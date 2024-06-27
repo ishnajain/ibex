@@ -26,6 +26,7 @@
 #define _write write
 #endif /* MISSING_SYSCALL_NAMES */
 
+
 #if defined MISSING_SYSCALL_NAMES || !defined HAVE_OPENDIR
 /* If the system call interface is missing opendir, readdir, and
    closedir, there is an implementation of these functions in
